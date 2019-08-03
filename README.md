@@ -1,19 +1,19 @@
 # aiaiaiai
 一、W3C:</strong></br>
-![image](https://github.com/xiaola66/-Webpages/blob/master/W3c/W3c.png)</br>
+![image]https://github.com/yxyinxiao07/aiaiaiai/blob/master/img/1.png)</br>
 <strong>---二、hao123:</strong></br>
 1.主页面：</br>
-![image](https://github.com/xiaola66/-Webpages/blob/master/hao123/hao1.png)</br>
+![image](https://github.com/yxyinxiao07/aiaiaiai/blob/master/img/2.png)</br>
 2.导航菜单显示：</br>
-![image](https://github.com/xiaola66/-Webpages/blob/master/hao123/hao2.png)</br>
+![image](https://github.com/yxyinxiao07/aiaiaiai/blob/master/img/3.png)</br>
 3.切换界面：</br>
-![image](https://github.com/xiaola66/-Webpages/blob/master/hao123/hao3.png)</br>
+![image](https://github.com/yxyinxiao07/aiaiaiai/blob/master/img/4.png)</br>
 <strong>---三、拉勾网:</strong></br>
 1.上部分页面:</br>
-![image](https://github.com/xiaola66/-Webpages/blob/master/%E6%8B%89%E5%8B%BE%E7%BD%91/lagou1.png)
+![image](https://github.com/yxyinxiao07/aiaiaiai/blob/master/img/5.png)
 2.隐藏职位列表:</br>
-![image](https://github.com/xiaola66/-Webpages/blob/master/%E6%8B%89%E5%8B%BE%E7%BD%91/lagou2.png)
+![image](https://github.com/yxyinxiao07/aiaiaiai/blob/master/img/6.png)
 3.热门职位列表:</br>
-![image](https://github.com/xiaola66/-Webpages/blob/master/%E6%8B%89%E5%8B%BE%E7%BD%91/lagou3.png)
+![image](https://github.com/yxyinxiao07/aiaiaiai/blob/master/img/7.png)
 <strong>---四、糗事百科（恶搞）:</strong></br>
-![image](https://github.com/xiaola66/-Webpages/blob/master/%E7%B3%97%E4%BA%8B%E7%99%BE%E7%A7%91/quishibaike.png)
+![image](https://github.com/yxyinxiao07/aiaiaiai/blob/master/img/8.png)
