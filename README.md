@@ -14,5 +14,4 @@
 ![image](https://github.com/xiaola66/-Webpages/blob/master/%E6%8B%89%E5%8B%BE%E7%BD%91/lagou2.png)
 3.热门职位列表:</br>
 ![image](https://github.com/xiaola66/-Webpages/blob/master/%E6%8B%89%E5%8B%BE%E7%BD%91/lagou3.png)
-<strong>---四、糗事百科（恶搞）:</strong></br>
-![image](https://github.com/xiaola66/-Webpages/blob/master/%E7%B3%97%E4%BA%8B%E7%99%BE%E7%A7%91/quishibaike.png)
+
