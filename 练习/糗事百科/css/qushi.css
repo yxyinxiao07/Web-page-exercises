@@ -1,0 +1,258 @@
+html,
+body,
+div,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+h5 {
+  margin-top: 5px;
+  font-weight: normal;
+}
+.top {
+  height: 85px;
+  background: #ffd52b;
+}
+.top-bar {
+  width: 1200px;
+  margin: 0 auto;
+}
+.top-logo {
+  float: left;
+  height: 70px;
+  width: 200px;
+  background: url("./../img/icongroup.png") 210px 495px;
+}
+.top-text li {
+  font-size: 18px;
+  list-style: none;
+  display: inline-block; /*把块元素变行元素*/
+  margin: 0 0 0 15px;
+  padding: 30px 15px;
+  color: #7a4624;
+  cursor: pointer;
+}
+.top-text li:hover {
+  background: #ffe36f;
+  color: #333;
+}
+.selected {
+  border-bottom: 4px solid #7a4624;
+  background: #ffe36f;
+  color: #333;
+}
+.content {
+  width: 1200px;
+  margin: 0 auto;
+}
+.left,
+.right {
+  float: left;
+}
+.left1,
+.left2 {
+  width: 700px;
+  margin: 20px 2px 0 10px;
+  padding: 10px 20px;
+  background-color: #f5fffa;
+}
+.zhanghuan {
+  float: left;
+  margin-top: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.yonghum {
+  float: left;
+  margin-top: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #9b8878;
+}
+.yonghum:hover {
+  color: #333;
+}
+.dengji {
+  width: 44px;
+  height: 20px;
+  background: url("./../img/item-1.jpg");
+  background-position: 396px 690px;
+  background-size: cover;
+  color: #fff;
+  float: right;
+  margin: -28px 530px;
+}
+.jishu {
+  font-size: 15px;
+  margin: 18px;
+}
+.neirong {
+  line-height: 1.8;
+  word-wrap: break-word;
+  margin-top: 70px;
+  font-size: 19px;
+}
+.chakan {
+  display: inline-block;
+  font-size: 12px;
+  border: 1px solid #fb0;
+  width: 58px;
+  text-align: center;
+  line-height: 24px;
+  color: #fb0;
+  cursor: pointer;
+}
+.pinglun {
+  margin-left: 10px;
+}
+.pinglun:hover {
+  cursor: pointer;
+  color: #9b8878;
+}
+.left-tb {
+  float: left;
+}
+.xiao {
+  float: left;
+  height: 20px;
+  width: 38px;
+  background: url("./../img/icongroup.png") 224px 541px;
+  cursor: pointer;
+}
+.ku {
+  float: left;
+  margin-left: 10px;
+  height: 20px;
+  width: 38px;
+  background: url("./../img/icongroup.png") 224px 517px;
+  cursor: pointer;
+}
+.taolun {
+  margin-left: 100px;
+  height: 20px;
+  width: 38px;
+  background: url("./../img/icongroup.png") 224px 564px;
+  cursor: pointer;
+}
+.right-tb {
+  margin-right: -160px;
+  float: right;
+}
+.weixin {
+  margin-right: 300px;
+  height: 20px;
+  width: 25px;
+  background: url("./../img/icongroup.png") 209px 659px;
+  cursor: pointer;
+}
+.qq {
+  margin-left: 40px;
+  margin-top: -20px;
+  height: 20px;
+  width: 25px;
+  background: url("./../img/icongroup.png") 209px 588px;
+  cursor: pointer;
+}
+.qqkongjian {
+  margin-left: 80px;
+  margin-top: -20px;
+  height: 20px;
+  width: 25px;
+  background: url("./../img/icongroup.png") 209px 612px;
+  cursor: pointer;
+}
+.weibo {
+  margin-left: 120px;
+  margin-top: -20px;
+  height: 20px;
+  width: 25px;
+  background: url("./../img/icongroup.png") 209px 637px;
+  cursor: pointer;
+}
+.left1-down {
+  padding-top: 50px;
+  cursor: pointer;
+}
+.cmt-god {
+  float: left;
+  height: 20px;
+  width: 25px;
+  background: url("./../img/item-2.jpg") 202px 674px;
+  background-size: cover;
+}
+.fangke {
+  color: #9b8878;
+  margin: 0 10px;
+  float: left;
+  font-size: 15px;
+}
+.pinglunnr {
+  float: left;
+  font-size: 15px;
+}
+.zan {
+  height: 11px;
+}
+.zanshu {
+  font-size: 14px;
+  color: #a9a9a9;
+}
+.shichunyu {
+  float: left;
+  margin-top: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.right1 {
+  border: 1px solid #ddd;
+  margin: 20px 2px 0 10px;
+  padding: 10px 20px;
+  height: 260px;
+  width: 330px;
+}
+.huan1 {
+  height: 110px;
+  width: 160px;
+}
+.huan2 {
+  height: 110px;
+  width: 160px;
+}
+.huan3 {
+  height: 110px;
+  width: 160px;
+}
+.huan4 {
+  height: 110px;
+  width: 160px;
+}
+.zhang1 {
+  margin-left: 50px;
+}
+.zhang2 {
+  margin-left: 100px;
+}
+.right2 {
+  border: 1px solid #ddd;
+  margin: 20px 2px 0 10px;
+  padding: 10px 20px;
+  height: 240px;
+  width: 330px;
+}
+.ultop {
+  margin-top: -5px;
+}
+.biaoqian li {
+  font-size: 18px;
+}
+.biaoqian span {
+  padding: 0 15px;
+}
+.biaoqian span:hover {
+  color: red;
+  cursor: pointer;
+}
