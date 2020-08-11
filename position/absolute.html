@@ -3,27 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!-- <link rel="shortcut icon" href="./../img/hoo.ico" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="./../img/favicon.ico" type="image/x-icon">
+    <title>absolute</title>
     <style>
-      /*3和5的第二个div与父div的上边距是不同的，第一个是相对父div来定位，
-      第二个是相对原来本身的位置来定位。可能此时你会注意到两个图的第二个div的宽度不同，
-      在没有给div设置宽度的情况下，第一个是设为absolute，所以宽度为文本宽度，第二个是relative，
-      所以宽度与父元素宽度相同。 */
       * {
         padding: 0;
         margin: 0;
       }
 
-      .container1 {
-        position: absolute;
-        height: 200px;
-        background-color: greenyellow;
-      }
-
       .div2 {
         height: 100px;
         background-color: blueviolet;
-        position: relative;
+        position: absolute;
         top: 50px;
         left: 50px;
       }
@@ -50,14 +42,13 @@
   <body>
     <div class="div1">第一个div</div>
 
-    <div class="container1">
-      第二个div的父div
-
-      <div class="div2">第二个div</div>
-    </div>
+    <div class="div2">第二个div</div>
 
     <div class="div3">第三个div</div>
 
     <div class="div4">第四个div</div>
+    <div>第二个div设置了absolute,则该div的宽度就由文本决定，
+      且下面的div会上移占据之前第二个div的位置，top和left是相对于离它最近且不是static定位的父元素来定位的，
+      在此div2因为没有父元素，所以第二个div相对于根元素即html元素来定位。</div>
   </body>
 </html>

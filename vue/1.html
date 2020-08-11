@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+  <style>
+    .red {
+      background-color: red;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div>{{2+3}}</div>
+
+
+  <div id="abc">
+    {{2+3}} <br>
+    {{syh}}
+    <div v-if="isCreated">动态创建与删除</div>
+    <div v-show="isShow">动态显示与隐藏</div>
+    <div :class="isActive?'red':'yellow'">11111111111111111111</div>
+    <div :style="'background:'+(isActive?'red':'yellow')">11111111111111111111</div>
+    <button @click="changecolor">change</button><br><br><br><br>
+    <input type="text" @input="change1" v-model="mytext1"><br><br>
+    <input type="text" @change="change2" v-model="mytext2"><br><br>
+    <input type="text" @keyup.enter="change3($event)" v-model="mytext3">        <!-- 按键修饰符 --><br><br>
+    <a href="http://www.baidu.com" @click.prevent="changgepage()">changgepage</a><br><br>
+
+    <div>
+      <p>你喜欢的数字</p>
+      <input type="checkbox" v-model="checkgroup" value="1">1
+      <input type="checkbox" v-model="checkgroup" value="2">2
+      <input type="checkbox" v-model="checkgroup" value="3">3
+      {{checkgroup}}
+    </div>
+
+    <div>
+      <p>你最喜欢的数字</p>
+      <input type="radio" v-model="onepick" value="1">1
+      <input type="radio" v-model="onepick" value="2">2
+      <input type="radio" v-model="onepick" value="3">3
+      {{onepick}}
+    </div>
+
+    <ul @click="clickul1()">
+      <li v-for="(item, index) in datalist1" @click="clickli1()">
+        {{item}} -----  {{index}}
+      </li>
+    </ul>
+    <ul @click="clickul2()">
+      <li v-for="(item, index) in datalist1" @click.stop="clickli2()">
+        {{item}} -----  {{index}}
+      </li>
+    </ul>
+    <ul @click.self="clickul3()">
+      <li v-for="(obj, key) in datalist2" @click="clickli3()">
+        {{obj}} -----  {{key}}
+      </li>
+    </ul>
+    <ul @click.self="clickul4()">
+      <li v-for="(obj, key) in datalist2" @click.once="clickli4()">
+        {{obj}} -----  {{key}}
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: "#abc",
+      data: {
+        "syh": "123",
+        "isShow": true,
+        "isCreated": true,
+        "isActive": true,
+        "datalist1": [111,222,333,444,555,666],
+        "list1": [111,222,333,444,555,666],
+        "datalist2": {'name':'amy','age':'20','sex':'female','habit':'music'},
+        "list2": {'name':'amy','age':'20','sex':'female','habit':'music'},
+        "mytext1": '',
+        "mytext2": '',
+        "mytext3": '',
+        "checkgroup": [],
+        "onepick": ''
+      },
+      methods: {
+        changecolor () {
+          this.isActive = !this.isActive;
+          this.isShow = !this.isShow;
+          this.isCreated = !this.isCreated;
+          this.syh = "123123123";
+        },
+        change1 () {
+          console.log(this.mytext1);
+          var newlist1 = this.list1.filter(item=>item.indexOf(this.mytext1)>-1);
+          this.datalist1 = newlist1;
+        },
+        change2 () {
+          console.log(this.mytext2);
+          var newlist1 = this.list1.filter(item=>item.indexOf(this.mytext2)>-1);
+          this.datalist1 = newlist1;
+          // var newlist2 = this.list2.filter(item=>item.indexOf(this.mytext2)>-1);
+          // this.datalist2 = newlist2;
+        },
+        change3 (ev) {
+          console.log(this.mytext3);
+          console.log('enter');
+          // if (ev.keycode === 13) {
+          //   console.log('enter');
+          // }
+        },
+        clickul1 () {
+          console.log('ul1')
+        },
+        clickli1 () {
+          console.log('li1')
+        },
+        clickul2 () {
+          console.log('ul2')
+        },
+        clickli2 () {
+          console.log('li2')
+        },
+        clickul3 () {
+          console.log('ul3')
+        },
+        clickli3 () {
+          console.log('li3')
+        },
+        clickul4 () {
+          console.log('ul4')
+        },
+        clickli4 () {
+          console.log('li4')
+        },
+        changgepage () {
+          console.log('changgepage')
+        }
+      }
+    })
+  </script>
+</body>
+</html>
