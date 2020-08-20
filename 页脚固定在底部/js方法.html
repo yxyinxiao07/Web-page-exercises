@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .clearfix:before,
+      .clearfix:after {
+        content: "";
+        display: table;
+      }
+      .clearfix:after {
+        clear: both;
+      }
+      .clearfix {
+        zoom: 1; /* IE <8 */
+      }
+      #footer {
+        height: 60px;
+        background: #fc6;
+        width: 100%;
+      }
+      /*==========其他div==========*/
+      #header {
+        padding: 10px;
+        background: lime;
+      }
+      #left {
+        width: 18%;
+        float: left;
+        margin-right: 2%;
+        background: orange;
+      }
+      #content {
+        width: 60%;
+        float: left;
+        margin-right: 2%;
+        background: green;
+      }
+      #right {
+        width: 18%;
+        float: left;
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">Header Section</div>
+    <div id="page" class="clearfix">
+      <div id="left">Left sidebar</div>
+      <div id="content">Main Content</div>
+      <div id="right">Right Content</div>
+    </div>
+    <div id="footer">Footer Section</div>
+  </body>
+  <script src="./jquery.js"></script>
+  <script type="text/javascript">
+    // Window load event used just in case window height is dependant upon images
+    $(window).bind("load", function () {
+      var footerHeight = 0,
+        footerTop = 0,
+        $footer = $("#footer");
+      positionFooter();
+      //定义positionFooter function
+      function positionFooter() {
+        //取到div#footer高度
+        footerHeight = $footer.height();
+        //div#footer离屏幕顶部的距离
+        footerTop =
+          $(window).scrollTop() + $(window).height() - footerHeight + "px";
+        /* DEBUGGING STUFF
+    console.log("Document height: ", $(document.body).height());
+    console.log("Window height: ", $(window).height());
+    console.log("Window scroll: ", $(window).scrollTop());
+    console.log("Footer height: ", footerHeight);
+    console.log("Footer top: ", footerTop);
+    console.log("-----------")
+    */
+        //如果页面内容高度小于屏幕高度，div#footer将绝对定位到屏幕底部，否则div#footer保留它的正常静态定位
+        if ($(document.body).height() + footerHeight < $(window).height()) {
+          $footer
+            .css({
+              position: "absolute",
+            })
+            .stop()
+            .animate({
+              top: footerTop,
+            });
+        } else {
+          $footer.css({
+            position: "static",
+          });
+        }
+      }
+      $(window).scroll(positionFooter).resize(positionFooter);
+    });
+  </script>
+</html>
