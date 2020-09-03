@@ -18,19 +18,29 @@
 <body>
   <div>{{2+3}}</div>
 
+  <template id="child">
+    <div style="background:paleturquoise">
+      <span>parentmsg:{{parentmsg}}</span>
+      <button @click="changeChild">给父组件传值</button>
+    </div>
+  </template>
 
   <div id="abc">
-    {{2+3}} <br>
-    {{syh}}
-    <div v-if="isCreated">动态创建与删除</div>
-    <div v-show="isShow">动态显示与隐藏</div>
-    <div :class="isActive?'red':'yellow'">11111111111111111111</div>
-    <div :style="'background:'+(isActive?'red':'yellow')">11111111111111111111</div>
-    <button @click="changecolor">change</button><br><br><br><br>
-    <input type="text" @input="change1" v-model="mytext1"><br><br>
-    <input type="text" @change="change2" v-model="mytext2"><br><br>
-    <input type="text" @keyup.enter="change3($event)" v-model="mytext3">        <!-- 按键修饰符 --><br><br>
-    <a href="http://www.baidu.com" @click.prevent="changgepage()">changgepage</a><br><br>
+    <span>parentmsg:{{parentmsg}}</span>
+    <child :parentmsg="parentmsg" @childmsg="updateChild" ></child>
+    <div>
+      {{2+3}} <br>
+      {{syh}}
+      <div v-if="isCreated">动态创建与删除</div>
+      <div v-show="isShow">动态显示与隐藏</div>
+      <div :class="isActive?'red':'yellow'">11111111111111111111</div>
+      <div :style="'background:'+(isActive?'red':'yellow')">11111111111111111111</div>
+      <button @click="changecolor">change</button><br><br><br><br>
+      <input type="text" @input="change1" v-model="mytext1"><br><br>
+      <input type="text" @change="change2" v-model="mytext2"><br><br>
+      <input type="text" @keyup.enter="change3($event)" v-model="mytext3">        <!-- 按键修饰符 --><br><br>
+      <a href="http://www.baidu.com" @click.prevent="changgepage()">changgepage</a><br><br>
+    </div>
 
     <div>
       <p>你喜欢的数字</p>
@@ -71,15 +81,32 @@
   </div>
 
   <script>
+    Vue.component('child',{
+      template: '#child',
+      data () {
+        return{
+          "childmsg": '22222'
+        }
+      },
+      props: ['parentmsg'],
+      methods: {
+        changeChild () {
+          this.childmsg = Math.ceil(Math.random() * 10)
+          this.$emit('childmsg', this.childmsg)
+        }
+      }
+    })
+
     var vm = new Vue({
       el: "#abc",
       data: {
+        "parentmsg": '11111',
         "syh": "123",
         "isShow": true,
         "isCreated": true,
         "isActive": true,
-        "datalist1": [111,222,333,444,555,666],
-        "list1": [111,222,333,444,555,666],
+        "datalist1": ['abc','ass','aa','aaaa','sade','adef'],
+        "list1": ['abc','ass','aa','aaaa','sade','adef'],
         "datalist2": {'name':'amy','age':'20','sex':'female','habit':'music'},
         "list2": {'name':'amy','age':'20','sex':'female','habit':'music'},
         "mytext1": '',
@@ -89,6 +116,10 @@
         "onepick": ''
       },
       methods: {
+        updateChild (e) {
+          this.childmsg = e
+          console.log(this.childmsg);
+        },
         changecolor () {
           this.isActive = !this.isActive;
           this.isShow = !this.isShow;
@@ -96,7 +127,6 @@
           this.syh = "123123123";
         },
         change1 () {
-          console.log(this.mytext1);
           var newlist1 = this.list1.filter(item=>item.indexOf(this.mytext1)>-1);
           this.datalist1 = newlist1;
         },

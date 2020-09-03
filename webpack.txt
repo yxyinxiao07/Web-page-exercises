@@ -1,0 +1,11 @@
+#什么是webpack
+ webpack是一个模块打包器，根据模块的依赖关系进行静态分析生成对应的静态资源。
+
+#五个核心概念
+ entry：入口起点，指示webpack应该使用哪个模块作为构建起内部依赖图的开始
+ output：告诉webpack在哪里输出创建的bundles以及如何命名这些文件
+ loader：处理非js文件（webpack自身职能解析js、json）
+ plugins：插件可以用于执行更广的任务（打包优化、压缩、重新定义环境中的变量等）
+ mode：模式，生产模式production，开发模式development
+
+ #  
