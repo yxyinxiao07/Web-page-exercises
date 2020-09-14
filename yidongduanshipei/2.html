@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" />
+  <title>Document</title>
+  <style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        background: red;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+    <script>
+    var scale = 1 / window.devicePixelRatio;
+    console.log(document.querySelector('meta[name="viewport"]'))
+    document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+    </script>
+</body>
+</body>
+</html>

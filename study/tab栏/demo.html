@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+     
+    ul {
+      list-style-type: none;
+    }
+     
+    .box {
+      width: 400px;
+      height: 300px;
+      border: 1px solid #ccc;
+      margin: 100px auto;
+      /*overflow: hidden;*/
+    }
+     
+    .hd {
+      height: 45px;
+    }
+     
+    .hd span {
+      display: inline-block;
+      width: 90px;
+      background-color: pink;
+      line-height: 45px;
+      text-align: center;
+      cursor: pointer;
+    }
+     
+    .hd span.current {
+      background-color: purple;
+    }
+     
+    .bd li {
+      height: 255px;
+      background-color: purple;
+      display: none;
+      padding: 10px;
+      color: white;
+    }
+     
+    .bd li.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<div id="box1" class="box">
+  <div class="hd">
+    <span class="current">体育</span>
+    <span>娱乐</span>
+    <span>新闻</span>
+    <span>综合</span>
+  </div>
+  <div class="bd">
+    <ul>
+      <li class="show">我是体育模块</li>
+      <li>我是娱乐模块</li>
+      <li>我是新闻模块</li>
+      <li>我是综合模块</li>
+    </ul>
+  </div>
+</div>
+ 
+</div>
+ 
+<script>
+  createTab("box1");
+  // createTab("box2");
+   
+  function createTab(id) {
+    //1 获取元素
+    //先获取要设置tab效果的父盒子
+    var box = document.getElementById(id);
+    var sps = box.getElementsByTagName("span");
+    var lis = box.getElementsByTagName("li");
+     
+    for (var i = 0; i < sps.length; i++) {
+      //设置每个span的索引
+      sps[i].index = i;
+      // console.log(sps[i].index);
+      sps[i].onclick = function () {
+        //4 点击按钮变色(排他)
+        for (var i = 0; i < sps.length; i++) {
+          sps[i].className = "";
+          lis[i].className = "";//借助sps排他的循环对li也进行排他
+        }
+         
+        //5 设置当前按钮变色
+        this.className = "current";
+         
+        lis[this.index].className = "show";
+         
+      };
+    }
+  }
+</script>
+ 
+ 
+</body>
+</html>
